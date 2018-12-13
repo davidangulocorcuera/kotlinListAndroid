@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity(),RecipesListAdapterListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerView = RecyclerView(this)
+        recyclerView = findViewById(R.id.recycler_recipe)
+        recyclerView.setHasFixedSize(true)
         var recipesList: ArrayList<Recipe> = addRecipes()
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = RecipesListAdapter(recipesList, this)
